@@ -1,3 +1,21 @@
 {
-    "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "rules": {
+    "indent": [2, 2, {"SwitchCase": 2, "VariableDeclarator": 2}],
+    "one-var": "off",
+    "max-len": "off",
+    "no-underscore-dangle": "off",
+    "global-require":"off",
+    "import/no-extraneous-dependencies": "off",
+    "class-methods-use-this": "off",
+    "object-curly-spacing": 0,
+    "no-else-return": "off",
+    "no-shadow": "off",
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ]
+  }
 }
