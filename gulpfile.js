@@ -1,39 +1,39 @@
 const path = require('path'),
-    del = require('del'),
-    chalk = require('chalk'),
-    dedent = require('dedent-js'),
-    gulp = require('gulp'),
-    gulpRemoveTaskOrderDependency = require('undertaker-forward-reference'),
+  del = require('del'),
+  chalk = require('chalk'),
+  dedent = require('dedent-js'),
+  gulp = require('gulp'),
+  gulpRemoveTaskOrderDependency = require('undertaker-forward-reference'),
 
-    /**
-     * Gulp plugins starting with "gulp-<name>" are loaded automatically under gulpPlugins.<name>
-     *     You can rename them or call functions on required plugins via options object passed to gulp-load-plugins:
-     *     {
+  /**
+   * Gulp plugins starting with "gulp-<name>" are loaded automatically under gulpPlugins.<name>
+   *     You can rename them or call functions on required plugins via options object passed to gulp-load-plugins:
+   *     {
      *     rename: {},
      *     postRequireTransforms: {}
      *     }
-     * Others are manually appended via the second array.
-     */
-    gulpPlugins = {
-      ...require('gulp-load-plugins')(),
-      ...{
-        browserSync: require('browser-sync').create(),
-        webpack: require('webpack-stream'),
-        yargs: require('yargs'),
-        /**
-         * enables us to define webpack entry points via gulp.src
-         */
-        named: require('vinyl-named'),
-      },
+   * Others are manually appended via the second array.
+   */
+  gulpPlugins = {
+    ...require('gulp-load-plugins')(),
+    ...{
+      browserSync: require('browser-sync').create(),
+      webpack: require('webpack-stream'),
+      yargs: require('yargs'),
+      /**
+       * enables us to define webpack entry points via gulp.src
+       */
+      named: require('vinyl-named'),
     },
-    gulpOptions = {
-      ...require('./config/gulp.config'),
-      ...{
-        production: !!(gulpPlugins.yargs.argv.production),
-        analyzeWebpack: !!(gulpPlugins.yargs.argv.analyze),
-      },
+  },
+  gulpOptions = {
+    ...require('./config/gulp.config'),
+    ...{
+      production: !!(gulpPlugins.yargs.argv.production),
+      analyzeWebpack: !!(gulpPlugins.yargs.argv.analyze),
     },
-    serverConfig = require('./config/config');
+  },
+  serverConfig = require('./config/config');
 
 class Flow {
   constructor() {
