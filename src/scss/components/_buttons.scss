@@ -1,6 +1,6 @@
 .btn {
   cursor: pointer;
-  transition: 0.2s all;
+  transition: $transition-default;
 
   &-primary {
     border-color: transparent !important;

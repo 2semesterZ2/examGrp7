@@ -26,14 +26,32 @@ a {
   &:focus {
     color: inherit;
   }
+
+  &.hover-primary {
+    &:hover {
+      color: theme-color("primary") !important;
+    }
+  }
+
+  &.underlined {
+    text-decoration: underline !important;
+  }
 }
 
-.btn-scroll-down {
-  font-size: rem(36px);
-  transition: color 190ms ease;
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.icon {
+  font-size: $h3-font-size;
+  transition: $transition-default;
 
   &:hover {
     color: theme-color('primary');
+  }
+
+  &-lg {
+    font-size: $h2-font-size;
   }
 }
 

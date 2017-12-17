@@ -8,5 +8,31 @@
 
   .menu-toggle {
     text-decoration: none;
+
+    .on,
+    .off {
+      align-items: center;
+      .h2{
+        line-height: $h2-font-size;
+      }
+    }
+
+    .on {
+      display: none;
+    }
+
+    .off {
+      display: inline-flex;
+    }
+
+    &.open {
+      .on {
+        display: inline-flex;
+      }
+
+      .off {
+        display: none;
+      }
+    }
   }
 }

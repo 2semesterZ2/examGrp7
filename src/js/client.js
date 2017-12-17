@@ -7,18 +7,32 @@ class Client {
 
   bindUIActions() {
     const $headerSibling = $('.section--statement').next(),
-      $btnScrollDown = $('.btn-scroll-down');
+      $btnScrollDown = $('.btn-scroll-down'),
+      $menuToggle = $('.menu-toggle'),
+      $menuOverlay = $('.menu-overlay');
 
     if ($headerSibling.length) {
       $btnScrollDown.click(function (e) {
         e.preventDefault();
         $('html, body').animate({
-          scrollTop: $headerSibling.offset().top
+          scrollTop: $headerSibling.offset().top,
         }, 200);
       });
     } else {
       $btnScrollDown.hide();
     }
+
+    $menuToggle.click(function (e) {
+      e.preventDefault();
+      const isVisible = $menuOverlay.is('.visible');
+      if (isVisible) {
+        $menuOverlay.removeClass('visible');
+        $menuToggle.removeClass('open');
+      } else {
+        $menuOverlay.addClass('visible');
+        $menuToggle.addClass('open');
+      }
+    });
   }
 }
 
