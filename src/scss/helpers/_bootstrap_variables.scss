@@ -115,8 +115,8 @@ $spacers: (
     1: ($spacer * .25),
     2: ($spacer * .5),
     3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    4: ($spacer * 2),
+    5: ($spacer * 5)
 ) !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -527,8 +527,8 @@ $nav-pills-link-active-bg: $component-active-bg !default;
 
 // Navbar
 
-$navbar-padding-y: ($spacer / 2) !default;
-$navbar-padding-x: $spacer !default;
+$navbar-padding-y: 2rem !default;
+$navbar-padding-x: 0 !default;
 
 $navbar-brand-font-size: $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
@@ -541,9 +541,9 @@ $navbar-toggler-padding-x: .75rem !default;
 $navbar-toggler-font-size: $font-size-lg !default;
 $navbar-toggler-border-radius: $btn-border-radius !default;
 
-$navbar-dark-color: rgba($white, .5) !default;
-$navbar-dark-hover-color: rgba($white, .75) !default;
-$navbar-dark-active-color: $white !default;
+$navbar-dark-color: #fff !default;
+$navbar-dark-hover-color: #fff !default;
+$navbar-dark-active-color: #fff !default;
 $navbar-dark-disabled-color: rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
 $navbar-dark-toggler-border-color: rgba($white, .1) !default;

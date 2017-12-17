@@ -1,0 +1,10 @@
+.menu-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: none;
+  background: theme-color("darkblue");
+}

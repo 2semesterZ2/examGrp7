@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: 'AvenirNextLTPro';
   color: #000;
   -webkit-font-smoothing: antialiased;
@@ -18,11 +19,15 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 
   &:hover,
   &:focus {
     color: inherit;
   }
+}
+
+.brand-logo{
+  height: 22px;
 }
