@@ -70,12 +70,12 @@ class Flow {
      */
     this.tasks = {
       images: gulp.series(_this.images),
-      build: gulp.series(gulp.parallel(_this.styles, _this.scripts)),
+      build: gulp.series(gulp.parallel(_this.copyFiles, _this.styles, _this.scripts)),
       nodemon: gulp.series(_this.server),
       server: gulp.series(_this.server, _this.startBrowserSync, (done) => {
         done();
       }),
-      deploy: gulp.series('build'),
+      deploy: gulp.series('build', 'images'),
       default: gulp.series('build', 'server', _this.watch),
     };
   }
@@ -136,6 +136,12 @@ class Flow {
         errorOnEnlargement: false,
       }))
       .pipe(gulp.dest(gulpOptions.images.dist));
+    done();
+  }
+
+  copyFiles(done) {
+    gulp.src(gulpOptions.copyFiles, {base: 'src'})
+      .pipe(gulp.dest('dist'));
     done();
   }
 

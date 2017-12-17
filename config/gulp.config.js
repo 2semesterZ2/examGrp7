@@ -17,6 +17,9 @@ module.exports = {
       notify: true,
     },
   },
+  copyFiles: [
+    'src/fonts/**/*.*',
+  ],
   html: {
     src: 'app/views',
     ext: `.${projectConfig.viewEngine}`,
