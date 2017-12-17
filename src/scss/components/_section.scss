@@ -8,6 +8,11 @@
     color: #fff;
   }
 
+  &--pink {
+    background: theme-color("primary");
+    color: #fff;
+  }
+
   &--statement {
     @extend .section--dark;
 

@@ -40,3 +40,9 @@ a {
 .brand-logo {
   height: 22px;
 }
+
+.shifted-gallery {
+  > .col-4:last-of-type {
+    margin-top: rem(185px);
+  }
+}
