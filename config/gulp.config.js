@@ -4,7 +4,7 @@ module.exports = {
   app: {
     nodemon: {
       script: 'app.js',
-      nodeArgs: ['--inspect'],
+      // nodeArgs: ['--inspect'],
       ext: 'js json',
       ignore: ['public/**/*.js', 'app/views/**/*.js', 'config/**/*.config.js', 'gulpfile.js', 'node_modules/'],
       env: {
@@ -23,14 +23,15 @@ module.exports = {
   },
   js: {
     /**
-     * src is the folder including all entry points for webpack
+     * src is the entry point for webpack
      */
-    src: 'src/js/entries',
+    src: 'src/js/client.js',
     dist: 'dist/js/',
   },
   images: {
     src: 'src/img/',
     dist: 'dist/img/',
+    imageBreakpoints: projectConfig.imageBreakpoints,
   },
   styles: {
     path: {

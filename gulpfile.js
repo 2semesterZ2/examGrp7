@@ -32,8 +32,7 @@ const path = require('path'),
       production: !!(gulpPlugins.yargs.argv.production),
       analyzeWebpack: !!(gulpPlugins.yargs.argv.analyze),
     },
-  },
-  serverConfig = require('./config/config');
+  };
 
 class Flow {
   constructor() {
@@ -71,7 +70,7 @@ class Flow {
      */
     this.tasks = {
       images: gulp.series(_this.images),
-      build: gulp.series(_this.clean, gulp.parallel(_this.styles, _this.scripts)),
+      build: gulp.series(gulp.parallel(_this.styles, _this.scripts)),
       nodemon: gulp.series(_this.server),
       server: gulp.series(_this.server, _this.startBrowserSync, (done) => {
         done();
@@ -99,7 +98,7 @@ class Flow {
    * Runs everything we need to do with JS.
    */
   scripts() {
-    return gulp.src([path.join(gulpOptions.js.src, '**/*.js')])
+    return gulp.src([path.join(gulpOptions.js.src)])
       .pipe(gulpPlugins.plumber())
       .pipe(gulpPlugins.named())
       .pipe(gulpPlugins.webpack(require('./config/webpack.config.js')({
@@ -116,7 +115,11 @@ class Flow {
    */
   images(done) {
     del.sync(gulpOptions.images.dist);
-    gulp.src(path.join(gulpOptions.images.src, '/**/*.{jpg,png}'))
+    gulp.src([path.join(gulpOptions.images.src, '/**/*.svg'), `!${path.join(gulpOptions.images.src, '/favicons/**/*.*')}`])
+      .pipe(gulp.dest(gulpOptions.images.dist));
+    gulp.src([path.join(gulpOptions.images.src, '/favicons/*.*')])
+      .pipe(gulp.dest(path.join(gulpOptions.images.dist, '/favicons')));
+    gulp.src([path.join(gulpOptions.images.src, '/**/*.{jpg,png}'), `!${path.join(gulpOptions.images.src, '/favicons/**/*.*')}`])
       .pipe(gulpPlugins.responsive({
         '**/*': this.getResponsiveConfig(),
       }, {
@@ -132,8 +135,6 @@ class Flow {
         withoutEnlargement: true,
         errorOnEnlargement: false,
       }))
-      .pipe(gulp.dest(gulpOptions.images.dist));
-    gulp.src(path.join(gulpOptions.images.src, '/**/*.svg}'))
       .pipe(gulp.dest(gulpOptions.images.dist));
     done();
   }
@@ -188,7 +189,7 @@ class Flow {
    */
   getResponsiveConfig() {
     const result = [];
-    for (const [key, value] of Object.entries(serverConfig.imageBreakpoints)) {
+    for (const [key, value] of Object.entries(gulpOptions.images.imageBreakpoints)) {
       result.push({
         width: value,
         rename: {suffix: `-${key}`},

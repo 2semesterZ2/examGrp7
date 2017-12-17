@@ -14,7 +14,13 @@ const config = {
     port: process.env.PORT || 3000,
     environment: env,
     viewEngine: 'ejs',
-    imageBreakpoints: {},
+    imageBreakpoints: {
+      xs: 576,
+      sm: 768,
+      md: 992,
+      lg: 1200,
+      xl: 1920,
+    },
   },
   /**
    * configuration specific for the development environment

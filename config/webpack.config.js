@@ -26,8 +26,8 @@ module.exports = (options = {}) => {
     },
     plugins: [
       new webpack.webpack.ProvidePlugin({
-        // $: 'jquery',
-        // jQuery: 'jquery'
+        $: 'jquery',
+        jQuery: 'jquery',
       }),
       new webpack.webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -36,13 +36,6 @@ module.exports = (options = {}) => {
         sourceMap: webpack.webpack.devtool && (webpack.webpack.devtool.indexOf('sourcemap') >= 0 || webpack.webpack.devtool.indexOf('source-map') >= 0),
       }),
       new webpack.webpack.NamedModulesPlugin(),
-      /**
-       * This takes files which are required in at least 3 different files and places them into a common.js file
-       */
-      new webpack.webpack.optimize.CommonsChunkPlugin({
-        names: ['commons'],
-        minChunks: 3,
-      }),
       /**
        * plugins to be added when in analyze mode (`gulp --analyze`)
        */
