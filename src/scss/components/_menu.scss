@@ -7,4 +7,9 @@
   opacity: 0;
   display: none;
   background: theme-color("darkblue");
+
+  &.visible {
+    display: flex;
+    opacity: 1;
+  }
 }
