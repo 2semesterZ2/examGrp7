@@ -20,3 +20,11 @@ router.get('/who-we-are', (req, res) => {
     pageName: 'Who we are',
   });
 });
+
+router.get('/portfolio', (req, res) => {
+  res.render('portfolio', {
+    title: 'Portfolio',
+    pageId: 'portfolio',
+    pageName: 'Portfolio',
+  });
+});
