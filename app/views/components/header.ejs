@@ -1,7 +1,9 @@
 <header>
     <nav class="navbar fixed-top navbar-expand-xs navbar-dark bg-darkblue text-white">
         <div class="container">
-            <h1 class="page-title font-weight-bold h6 mb-0">What we do</h1>
+            <% if(pageId !== null) { %>
+            <h1 class="page-title font-weight-bold h6 mb-0"><%= pageName %></h1>
+            <% } %>
             <div class="d-flex w-100 flex-row justify-content-between align-items-center">
                 <a class="navbar-brand" href="/">
                     <img class="brand-logo d-none d-md-block" src="/img/unchained-logo.svg" alt="Unchained">

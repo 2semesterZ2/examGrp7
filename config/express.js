@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const expressLayouts = require('express-ejs-layouts');
 const config = require('./config');
 
-const responsiveImage = (filePath, alt, sizes = '', attributes = '') => {
+const responsiveImage = (filePath, alt, sizes = '', attributes = '', imgAttributes = '') => {
   const dirname = path.dirname(filePath);
   const extname = path.extname(filePath);
   const filename = path.basename(filePath, extname);
@@ -20,15 +20,17 @@ const responsiveImage = (filePath, alt, sizes = '', attributes = '') => {
   if (sizes !== '') {
     sizes = `sizes="${sizes}"`;
   }
+  let lastValue = 1;
   for (const [key, value] of Object.entries(config.imageBreakpoints)) {
-    normalSrcset += `${(first ? '' : ', ') + path.join(dirname, `${filename}-${key}${extname}`)} ${value}w`;
-    webpSrcset += `${(first ? '' : ', ') + path.join(dirname, `${filename}-${key}.webp`)} ${value}w`;
+    normalSrcset += `${(first ? '' : ', ') + path.join(dirname, `${filename}-${key}${extname}`)} ${lastValue}w`;
+    webpSrcset += `${(first ? '' : ', ') + path.join(dirname, `${filename}-${key}.webp`)} ${lastValue}w`;
     fallbacks.push(path.join(dirname, `${filename}-${key}${extname}`));
     first = false;
+    lastValue = value;
   }
   const result = `<picture ${attributes}>
                 <source type="image/webp" srcset="${webpSrcset}" ${sizes}>
-                <img src="${fallbacks.pop()}" alt="${alt}" srcset="${normalSrcset}" ${sizes}>
+                <img src="${fallbacks.pop()}" alt="${alt}" ${imgAttributes} srcset="${normalSrcset}" ${sizes}>
             </picture>`;
   return result;
 };
