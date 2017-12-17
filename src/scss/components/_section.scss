@@ -1,11 +1,22 @@
 .section {
-  &--statement {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  &--dark {
     background: theme-color("darkblue");
     color: #fff;
-    height: 100vh;
+  }
 
+  &--statement {
+    @extend .section--dark;
+
+    height: 100vh;
     @include media-breakpoint-up(md) {
       height: calc(100vh - #{$h1-font-size + 5rem});
     }
+  }
+
+  &--fullscreen {
+    flex: 1 0 auto;
   }
 }
