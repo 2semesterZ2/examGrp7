@@ -78,7 +78,9 @@ module.exports = {
       /**
        * Paths to the scss packages from node_modules go below.
        */
-      includePaths: [],
+      includePaths: [
+        'node_modules/bootstrap',
+      ],
     },
   },
 };

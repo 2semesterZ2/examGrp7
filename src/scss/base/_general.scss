@@ -2,23 +2,22 @@
 *   Global classes
 **/
 
-
 /**
 *   General page styles
 **/
 
-html{
-
+html {
 }
 
 body {
-
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
-  &:hover, &:focus{
+
+  &:hover,
+  &:focus {
     color: inherit;
   }
 }
