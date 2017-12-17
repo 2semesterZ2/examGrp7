@@ -28,6 +28,15 @@ a {
   }
 }
 
-.brand-logo{
+.btn-scroll-down {
+  font-size: rem(36px);
+  transition: color 190ms ease;
+
+  &:hover {
+    color: theme-color('primary');
+  }
+}
+
+.brand-logo {
   height: 22px;
 }

@@ -27,10 +27,12 @@
     justify-content: center;
   }
 
-  &__container-bottom-right {
+  &__container--bottom-right {
+    bottom: 2rem;
+    left: 50%;
     position: absolute;
     left: 50%;
     bottom: 2rem;
-    transform: translatex(-50%);
+    transform: translateX(-50%);
   }
 }
