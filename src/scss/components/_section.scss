@@ -1,6 +1,7 @@
 .section {
   padding-top: 5rem;
   padding-bottom: 5rem;
+  position: relative;
 
   &--dark {
     background: theme-color("darkblue");
@@ -18,5 +19,18 @@
 
   &--fullscreen {
     flex: 1 0 auto;
+  }
+
+  &--vertical-center {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  &__container--bottom-right {
+    bottom: 2rem;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
   }
 }

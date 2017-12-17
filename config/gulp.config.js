@@ -6,7 +6,7 @@ module.exports = {
       script: 'app.js',
       // nodeArgs: ['--inspect'],
       ext: 'js json',
-      ignore: ['public/**/*.js', 'app/views/**/*.js', 'config/**/*.config.js', 'gulpfile.js', 'node_modules/'],
+      ignore: ['src/**/*.js', 'dist/**/*.js', 'app/views/**/*.js', 'config/**/*.config.js', 'gulpfile.js', 'node_modules/'],
       env: {
         NODE_ENV: 'development',
       },
@@ -28,7 +28,7 @@ module.exports = {
     /**
      * src is the entry point for webpack
      */
-    src: 'src/js/client.js',
+    src: 'src/js/',
     dist: 'dist/js/',
   },
   images: {

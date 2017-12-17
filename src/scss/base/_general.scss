@@ -26,3 +26,12 @@ a {
     color: inherit;
   }
 }
+
+.btn-scroll-down {
+  font-size: rem(36px);
+  transition: color 190ms ease;
+
+  &:hover {
+    color: theme-color('primary');
+  }
+}

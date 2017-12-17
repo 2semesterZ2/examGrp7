@@ -11,3 +11,10 @@ router.get('/', (req, res) => {
     pageName: 'landing',
   });
 });
+
+router.get('/who-we-are', (req, res) => {
+  res.render('who-we-are', {
+    title: 'Who we are',
+    pageName: 'who-we-are',
+  });
+});
