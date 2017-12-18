@@ -1,5 +1,12 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
 .page-portfolio {
   .reference {
     height: 100%;
+  }
+
+  .description {
+    width: 100%;
   }
 }

@@ -1,15 +1,15 @@
 <section class="section section--fullscreen section--dark section--vertical-center justify-content-center">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 offset-md-3">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                 <% if(locals.posted){ %>
                 <h3 class="font-weight-normal">Your email has landed. Thanks for cathing up!</h3>
                 <% } else { %>
                 <form action="/contact" method="post">
-                    <div class="h3 font-weight-normal mb-4">
+                    <div class="h3 font-weight-normal mb-3 mb-sm-4">
                         Hey,
                     </div>
-                    <div class="h3 font-weight-normal mb-4">
+                    <div class="h3 font-weight-normal mb-3 mb-sm-4">
                         <span>I would like to </span>
                         <label class="sr-only" for="action">Choose your action</label>
                         <select class="select-hidden d-none custom-select" id="action" name="action">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="container section__container--bottom-right d-flex justify-content-between align-items-end">
+    <div class="container section__container--bottom-right d-none d-sm-flex justify-content-between align-items-end">
         <div>
             <div class="font-weight-500">Based in Aarhus, Denmark</div>
             <div><a href="mailto:hello@unchained.studio" class="text-primary underlined">hello@unchained.studio</a>

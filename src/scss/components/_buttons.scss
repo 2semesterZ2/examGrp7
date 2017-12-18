@@ -2,6 +2,11 @@
   cursor: pointer;
   transition: $transition-default;
 
+  @include media-breakpoint-only(xs) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   &-primary {
     border-color: transparent !important;
 
