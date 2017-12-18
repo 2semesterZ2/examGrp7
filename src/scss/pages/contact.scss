@@ -2,14 +2,8 @@
 @import "../helpers/mixins";
 
 .page-contact {
-  main {
-    display: flex;
-    min-height: 100vh;
-    flex-flow: column nowrap;
-  }
-
   form .h3 {
-    line-height: 1.5;
+    line-height: 2;
   }
 
   .custom-dropdown {
@@ -33,6 +27,10 @@
 
       &::after {
         display: none;
+      }
+
+      i {
+        font-size: 0.8rem;
       }
     }
 

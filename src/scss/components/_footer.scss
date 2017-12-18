@@ -1,0 +1,13 @@
+footer {
+  .footer-section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(xs) {
+      align-items: flex-start;
+      flex-flow: column;
+      text-align: left;
+    }
+  }
+}

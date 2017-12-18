@@ -7,7 +7,7 @@ module.exports = (app) => {
 
 router.get('/', (req, res) => {
   res.render('index', {
-    title: 'Generator-Express MVC',
+    title: 'Unchained | Homepage',
     pageId: 'landing',
     pageName: null,
     footerDisabled: true,
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.get('/who-we-are', (req, res) => {
   res.render('who-we-are', {
-    title: 'Who we are',
+    title: 'Unchained | Who we are',
     pageId: 'who-we-are',
     pageName: 'Who we are',
   });
@@ -25,7 +25,7 @@ router.get('/who-we-are', (req, res) => {
 
 router.get('/contact', (req, res) => {
   res.render('contact', {
-    title: 'Get in touch',
+    title: 'Unchained | Get in touch',
     pageId: 'contact',
     pageName: 'Get in touch',
     footerDisabled: true,
@@ -34,7 +34,7 @@ router.get('/contact', (req, res) => {
 
 router.post('/contact', (req, res) => {
   res.render('contact', {
-    title: 'Get in touch',
+    title: 'Unchained | Get in touch',
     pageId: 'contact',
     pageName: 'Get in touch',
     footerDisabled: true,
@@ -44,7 +44,7 @@ router.post('/contact', (req, res) => {
 
 router.get('/portfolio', (req, res) => {
   res.render('portfolio', {
-    title: 'Portfolio',
+    title: 'Unchained | Portfolio',
     pageId: 'portfolio',
     pageName: 'Portfolio',
   });
@@ -52,7 +52,7 @@ router.get('/portfolio', (req, res) => {
 
 router.get('/what-we-do', (req, res) => {
   res.render('what-we-do', {
-    title: 'What we do',
+    title: 'Unchained | What we do',
     pageId: 'what-we-do',
     pageName: 'What we do',
   });
