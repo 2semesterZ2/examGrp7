@@ -10,6 +10,12 @@
       background-color: #fff !important;
       color: theme-color("primary") !important;
     }
+
+    &--hover-outline {
+      &:hover {
+        border: 2px solid theme-color('primary') !important;
+      }
+    }
   }
 
   &-outline {
