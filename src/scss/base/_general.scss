@@ -64,3 +64,50 @@ a {
     margin-top: rem(185px);
   }
 }
+
+.process {
+  counter-reset: processStep;
+
+  .process-step-heading {
+    counter-increment: processStep;
+  }
+
+  .h2 {
+    &::before {
+      color: theme-color("primary");
+      content: counter(processStep) ".";
+      padding-right: rem(22px);
+      position: absolute;
+      transform: translateX(-100%);
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .fa-level-down-alt {
+    font-size: rem(72px);
+    transform: translateX(-80%);
+
+    &.flip-x {
+      transform: translateX(-80%) rotateY(180deg);
+    }
+
+    &.flip-y {
+      transform: translateX(-80%) rotateX(180deg);
+    }
+
+    &.point-right {
+      transform: translate3d(-80%, -60%, 0) scaleX(-1) rotate(90deg);
+    }
+  }
+}
+
+.list-2-columns {
+  column-count: 2;
+  font-style: italic;
+  list-style-type: none;
+  line-height: 2;
+  padding-left: 0;
+}
