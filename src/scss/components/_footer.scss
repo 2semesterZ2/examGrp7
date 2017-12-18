@@ -5,9 +5,9 @@ footer {
     justify-content: space-between;
 
     @include media-breakpoint-down(xs) {
-      align-items: center;
+      align-items: flex-start;
       flex-flow: column;
-      text-align: center;
+      text-align: left;
     }
   }
 }
