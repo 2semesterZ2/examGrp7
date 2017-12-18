@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
     title: 'Generator-Express MVC',
     pageId: 'landing',
     pageName: null,
+    footerDisabled: true,
   });
 });
 
@@ -18,5 +19,14 @@ router.get('/who-we-are', (req, res) => {
     title: 'Who we are',
     pageId: 'who-we-are',
     pageName: 'Who we are',
+  });
+});
+
+router.get('/contact', (req, res) => {
+  res.render('contact', {
+    title: 'Get in touch',
+    pageId: 'contact',
+    pageName: 'Get in touch',
+    footerDisabled: true,
   });
 });

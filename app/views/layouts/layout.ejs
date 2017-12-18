@@ -19,7 +19,9 @@
 <main>
     <%- body %>
 </main>
+<% if(!locals.footerDisabled){ %>
 <% include ../components/footer %>
+<% } %>
 <% include ../components/menu %>
 <%- defineContent('block__scripts') %>
 <script src="/js/client.js"></script>
