@@ -1,0 +1,69 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.page-contact {
+  main {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: column nowrap;
+  }
+
+  form .h3 {
+    line-height: 1.5;
+  }
+
+  .custom-dropdown {
+    line-height: 1;
+    width: 230px;
+
+    .current-choice {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .dropdown-toggle {
+      border-bottom: 1px solid #fff;
+      text-align: center;
+
+      &:focus {
+        outline: none;
+        border-bottom-color: theme-color("primary");
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      padding: 0;
+
+      .dropdown-item {
+        padding: 0.5rem 2rem;
+
+        &:hover {
+          background: theme-color("primary");
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .custom-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    line-height: 1;
+    width: 230px;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: theme-color("primary");
+    }
+
+    &::placeholder {
+      color: rgba(theme-color("primary"), 0.5);
+    }
+  }
+}

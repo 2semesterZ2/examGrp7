@@ -9,7 +9,9 @@ class Client {
     const $headerSibling = $('.section--statement').next(),
       $btnScrollDown = $('.btn-scroll-down'),
       $menuToggle = $('.menu-toggle'),
-      $menuOverlay = $('.menu-overlay');
+      $menuOverlay = $('.menu-overlay'),
+      $contactSelect = $('.custom-select'),
+      $contactDropdown = $('.custom-dropdown');
 
     if ($headerSibling.length) {
       $btnScrollDown.click(function (e) {
@@ -32,6 +34,13 @@ class Client {
         $menuOverlay.addClass('visible');
         $menuToggle.addClass('open');
       }
+    });
+
+    $contactDropdown.find('a.dropdown-item').click(function (e) {
+      e.preventDefault();
+      const $el = $(this);
+      $contactSelect.val($el.attr('data-value'));
+      $contactDropdown.find('.current-choice').text($el.text());
     });
   }
 }

@@ -1,0 +1,53 @@
+<section class="section section--fullscreen section--dark section--vertical-center justify-content-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <form action="/contact" method="post">
+                    <div class="h3 font-weight-normal mb-4">
+                        Hey,
+                    </div>
+                    <div class="h3 font-weight-normal mb-4">
+                        <span>I would like to </span>
+                        <label class="sr-only" for="action">Choose your action</label>
+                        <select class="select-hidden d-none custom-select" id="action" name="action">
+                            <option selected value="work">Work with you</option>
+                            <option value="ask">Ask a question</option>
+                            <option value="know">Know more about what you can do for me</option>
+                            <option value="beer">Grab a beer with you</option>
+                        </select>
+                        <div class="d-inline-block custom-dropdown dropdown">
+                            <a href="#" class="dropdown-toggle text-primary d-flex justify-content-center align-items-center" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="current-choice">work with you</span><span class="ml-3"><i class="fas fa-chevron-down"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" data-value="work" href="#">work with you</a>
+                                <a class="dropdown-item" data-value="ask" href="#">ask a question</a>
+                                <a class="dropdown-item" data-value="know" href="#">know more about what you can do for me</a>
+                                <a class="dropdown-item" data-value="beer" href="#">grab a beer with you</a>
+                            </div>
+                        </div>
+                        <span>, <br></span>
+                        <span>Shoot me back an e-mail at </span>
+                        <label class="sr-only" for="email">Email</label>
+                        <input type="text" class="custom-input d-inline-block text-primary" id="email" name="email" placeholder="my@email.com">
+                        <span>.</span>
+                    </div>
+                    <div class="h3 font-weight-normal mb-4">
+                        <span>Cheers,<br></span>
+                        <label class="sr-only" for="name">Name</label>
+                        <input type="text" class="custom-input d-inline-block text-primary text-left" id="name" name="name" placeholder="Signature">
+                    </div>
+                    <button  type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container section__container--bottom-right d-flex justify-content-between align-items-end">
+        <div>
+            <div class="font-weight-500">Based in Aarhus, Denmark</div>
+            <div><a href="mailto:hello@unchained.studio" class="text-primary underlined">hello@unchained.studio</a></div>
+            <div>+45 91 88 88 27</div>
+        </div>
+        <% include components/socials %>
+    </div>
+</section>
