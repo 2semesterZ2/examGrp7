@@ -32,6 +32,16 @@ router.get('/contact', (req, res) => {
   });
 });
 
+router.post('/contact', (req, res) => {
+  res.render('contact', {
+    title: 'Get in touch',
+    pageId: 'contact',
+    pageName: 'Get in touch',
+    footerDisabled: true,
+    posted: true,
+  });
+});
+
 router.get('/portfolio', (req, res) => {
   res.render('portfolio', {
     title: 'Portfolio',
