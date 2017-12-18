@@ -16,7 +16,7 @@ class Client {
         e.preventDefault();
         $('html, body').animate({
           scrollTop: $headerSibling.offset().top - $('.navbar').innerHeight()
-        }, 200);
+        }, 270);
       });
     } else {
       $btnScrollDown.hide();
