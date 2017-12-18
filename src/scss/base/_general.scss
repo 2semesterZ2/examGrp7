@@ -8,6 +8,13 @@
 
 html {
   font-size: $font-size-root;
+
+  @include media-breakpoint-down(md) {
+    font-size: $font-size-root - 2px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-root - 4px;
+  }
 }
 
 body {
@@ -16,6 +23,12 @@ body {
   color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  flex-flow: column nowrap;
 }
 
 a {

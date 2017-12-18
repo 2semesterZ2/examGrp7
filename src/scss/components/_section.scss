@@ -1,4 +1,5 @@
 .section {
+  flex: 0 0 auto;
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;
@@ -16,14 +17,20 @@
   &--statement {
     @extend .section--dark;
 
-    height: 100vh;
+    flex: 1 0 auto;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+
     @include media-breakpoint-up(md) {
-      height: calc(100vh - #{$h1-font-size + 5rem});
+      min-height: calc(100vh - #{$h1-font-size + 5rem});
     }
   }
 
   &--fullscreen {
     flex: 1 0 auto;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
   }
 
   &--vertical-center {

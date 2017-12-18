@@ -2,12 +2,6 @@
 @import "../helpers/mixins";
 
 .page-contact {
-  main {
-    display: flex;
-    min-height: 100vh;
-    flex-flow: column nowrap;
-  }
-
   form .h3 {
     line-height: 1.5;
   }
