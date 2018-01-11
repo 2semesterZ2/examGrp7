@@ -51,6 +51,15 @@ router.post('/contact', (req, res, next) => {
     },
   });
 
+  // verify connection configuration
+  transporter.verify(function(error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Server is ready to take our messages');
+    }
+  });
+
   transporter.sendMail({
     from: details.email,
     to: 'hello@unchained.studio',
