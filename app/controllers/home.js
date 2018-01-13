@@ -46,8 +46,11 @@ router.post('/contact', (req, res, next) => {
     auth: {
       type: 'OAuth2',
       user: 'hello@unchained.studio',
-      accessToken: 'ya29.Gls_BTqSJc9TQ2ecsagvU7AGKoaQwmZnkLqb7xVL5DXskwWl4Ln11vHmcSwnlsuxT4oHhAeuuBQ9Zp5vqA4uk-3rKj6_UI2JmFi2XbV6ZoW4LA2a5wPVgTtaY8dJ',
-      refreshToken: '1/sjOA6WftIkHi1i8h1EqnAR9tTDJV7iEY2brxIgwHtjk',
+      clientId: '898672997130-93fvffn1sj933d7ukbgum55l37i45e9l.apps.googleusercontent.com',
+      clientSecret: 'SM13LcsmkNlOBPK-GsuUqY49',
+      refreshToken: '1/HARRfOZGVpie3IvIvR0hIxLZqsBpqhry3n5ZwJU3a5g',
+      accessToken: 'ya29.GltBBdkyD4KdLdQkc2humtkVHPr7igcvn-rvC2sGEHb91O55rMFsJmKajN7zGicyAizNJ8iJjxXTtmWTTXh0ERlG7JTqEM80JVwV_XwOlSfVNN9dGiFFvhNuIR-f',
+      expires: 86400,
     },
   });
 
