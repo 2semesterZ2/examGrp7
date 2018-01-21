@@ -11,8 +11,13 @@ html {
   @include media-breakpoint-down(md) {
     font-size: $font-size-root - 2px;
   }
+
   @include media-breakpoint-down(sm) {
     font-size: $font-size-root - 4px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: $font-size-root - 6px;
   }
 }
 
@@ -34,15 +39,17 @@ main {
 a {
   text-decoration: none !important;
   color: inherit;
+  transition: $transition-default;
 
   &:hover,
   &:focus {
-    color: inherit;
+    color: theme-color("primary");
   }
 
-  &.hover-primary {
-    &:hover {
-      color: theme-color("primary") !important;
+  &.hover-none {
+    &:hover,
+    &:focus {
+      color: inherit;
     }
   }
 
@@ -57,11 +64,6 @@ a {
 
 .icon {
   font-size: $h3-font-size;
-  transition: $transition-default;
-
-  &:hover {
-    color: theme-color('primary');
-  }
 
   &-lg {
     font-size: $h2-font-size;
