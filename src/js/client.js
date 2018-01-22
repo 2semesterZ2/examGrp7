@@ -46,6 +46,7 @@ class Client {
   }
 
   initNavbarHide() {
+    // inspired by https://osvaldas.info/auto-hide-sticky-header
     let wScrollLast = $(window).scrollTop();
     $(window).scroll(function () {
       const wScrollCurrent = $(this).scrollTop();
@@ -56,7 +57,6 @@ class Client {
       const wHeight = $(window).innerHeight();
       let elTop = element.position().top + wScrollDiff;
       const offsetBottom = $('footer').outerHeight();
-      console.log([wScrollCurrent, wScrollDiff, elTop]);
       if (wScrollCurrent <= 0) { // scrolled to the very top; element sticks to the top
         element.css({
           top: '0px',
