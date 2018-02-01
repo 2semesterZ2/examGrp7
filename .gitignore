@@ -1,5 +1,8 @@
+# files
 .DS_Store
 .sass_cache
-node_modules
-.idea
-/dist/
+
+# folders
+.idea/
+dist/
+node_modules/
